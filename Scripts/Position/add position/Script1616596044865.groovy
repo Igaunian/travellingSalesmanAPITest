@@ -17,26 +17,49 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper
+import com.kms.katalon.core.testobject.impl.HttpTextBodyContent
 import com.kms.katalon.core.testobject.RequestObject
 
-def getPositions = (RequestObject)findTestObject('TS/get', [('base_url') : GlobalVariable.base_url, ('endpoint') : 'personality/get-all-matching-position/', ('id') : GlobalVariable.salesman_id, ('token') : GlobalVariable.salesman_token]);
+def positionBody = """{
+    "company" : {
+        "id" : "${GlobalVariable.company_id}",
+        "username" : "SC",
+        "nameOfCompany" : "Some Company",
+        "phoneNumber" : "301234567",
+        "email" : "company@kamu.hu",
+        "country" : "Canada",
+        "county" : "Toronto",
+        "city" : "Toronto",
+        "postcode" : "71643",
+        "address" : "Paul Jhonson street",
+        "houseNumber" : "21",
+        "password" : "password",
+        "dateOfFoundation" :  "2000-01-01",
+        "taxNumber" : "123456-7-89"
+    },
+    "nameOfPosition" : "salesman",
+    "city" : "Budapest",
+    "salary" : "350000",
+    "requiredMatchLevel": "ACCEPTABLE"
+}"""
 
-def response = WS.sendRequest(getPositions)
+def addPosition = (RequestObject)findTestObject('TS/post', [('base_url') : GlobalVariable.base_url, ('endpoint') : 'position/add-position', ('token') : GlobalVariable.company_token]);
 
-println(response)
+try {
+	addPosition.setBodyContent(new HttpTextBodyContent(positionBody, 'UTF-8', 'application/json'))
+}
+catch(Exception e) {
+	println(e.printStackTrace())
+};
 
-def jsonSlurper = new JsonSlurper()
-def result = jsonSlurper.parseText(response.getResponseBodyContent())
+def response = WS.sendRequest(addPosition)
 
-println(result)
-
-GlobalVariable.position_id = result[0].id
-GlobalVariable.position_name = result[0].nameOfPosition
-GlobalVariable.position_city = result[0].city
+GlobalVariable.position_name = 'salesman'
+GlobalVariable.position_city = 'Budapest'
 
 WS.verifyResponseStatusCode(response, 200)
 
-assert 'salesman' == result[0].nameOfPosition
-assert 'Budapest' == result[0].city
+
+
 
 

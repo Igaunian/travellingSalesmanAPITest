@@ -17,26 +17,46 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper
+import com.kms.katalon.core.testobject.impl.HttpTextBodyContent
 import com.kms.katalon.core.testobject.RequestObject
 
-def getPositions = (RequestObject)findTestObject('TS/get', [('base_url') : GlobalVariable.base_url, ('endpoint') : 'personality/get-all-matching-position/', ('id') : GlobalVariable.salesman_id, ('token') : GlobalVariable.salesman_token]);
+def deleteBody = """{
+    "company" : {
+        "id" : "${GlobalVariable.company_id}",
+        "username" : "SC",
+        "nameOfCompany" : "Some Company",
+        "phoneNumber" : "301234567",
+        "email" : "company@kamu.hu",
+        "country" : "Canada",
+        "county" : "Toronto",
+        "city" : "Toronto",
+        "postcode" : "71643",
+        "address" : "Paul Jhonson street",
+        "houseNumber" : "21",
+        "password" : "password",
+        "dateOfFoundation" :  "2000-01-01",
+        "taxNumber" : "123456-7-89"
+    },
+    "id" : ${GlobalVariable.position_id},
+    "nameOfPosition" : "Updated",
+    "city" : "Budapest",
+    "salary" : "350000",
+    "requiredMatchLevel": "PERFECT"
+}"""
 
-def response = WS.sendRequest(getPositions)
+def deletePosition = (RequestObject)findTestObject('TS/delete', [('base_url') : GlobalVariable.base_url, ('endpoint') : 'position/delete-position', ('token') : GlobalVariable.company_token]);
+
+try {
+	deletePosition.setBodyContent(new HttpTextBodyContent(deleteBody, 'UTF-8', 'application/json'))
+}
+catch(Exception e) {
+	println(e.printStackTrace())
+};
+
+def response = WS.sendRequest(deletePosition)
 
 println(response)
 
-def jsonSlurper = new JsonSlurper()
-def result = jsonSlurper.parseText(response.getResponseBodyContent())
-
-println(result)
-
-GlobalVariable.position_id = result[0].id
-GlobalVariable.position_name = result[0].nameOfPosition
-GlobalVariable.position_city = result[0].city
-
 WS.verifyResponseStatusCode(response, 200)
-
-assert 'salesman' == result[0].nameOfPosition
-assert 'Budapest' == result[0].city
 
 

@@ -19,24 +19,17 @@ import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper
 import com.kms.katalon.core.testobject.RequestObject
 
-def getPositions = (RequestObject)findTestObject('TS/get', [('base_url') : GlobalVariable.base_url, ('endpoint') : 'personality/get-all-matching-position/', ('id') : GlobalVariable.salesman_id, ('token') : GlobalVariable.salesman_token]);
+def searchPositions = (RequestObject)findTestObject('TS/get two variables', [('base_url') : GlobalVariable.base_url, ('endpoint') : 'position/search/', ('city') : GlobalVariable.position_city, ('name') : GlobalVariable.position_name, ('token') : GlobalVariable.salesman_token]);
 
-def response = WS.sendRequest(getPositions)
+println(GlobalVariable.position_city)
+println(GlobalVariable.position_name)
+println(searchPositions.getRestUrl())
+
+def response = WS.sendRequest(searchPositions)
 
 println(response)
 
-def jsonSlurper = new JsonSlurper()
-def result = jsonSlurper.parseText(response.getResponseBodyContent())
-
-println(result)
-
-GlobalVariable.position_id = result[0].id
-GlobalVariable.position_name = result[0].nameOfPosition
-GlobalVariable.position_city = result[0].city
-
 WS.verifyResponseStatusCode(response, 200)
 
-assert 'salesman' == result[0].nameOfPosition
-assert 'Budapest' == result[0].city
 
 
