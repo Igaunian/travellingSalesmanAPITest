@@ -14,7 +14,7 @@
    <testCaseLink>
       <guid>1be912d5-8d0c-456a-926e-e591372a5329</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Company/registrate company</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -28,5 +28,17 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Company/get company</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7250ac36-9822-4f58-955f-6df4763a0c7d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Company/update company</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>5842c4ad-b51d-48c3-b379-7e25093cde43</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Company/delete company</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
