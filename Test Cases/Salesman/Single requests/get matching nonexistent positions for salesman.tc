@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>get matching positions for salesman</name>
+   <name>get matching nonexistent positions for salesman</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>0b0f83d7-7bba-4049-a8b7-056e71905984</testCaseGuid>

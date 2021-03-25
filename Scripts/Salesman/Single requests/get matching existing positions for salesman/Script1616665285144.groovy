@@ -40,3 +40,4 @@ assert 'salesman' == result[0].nameOfPosition
 assert 'Budapest' == result[0].city
 
 
+

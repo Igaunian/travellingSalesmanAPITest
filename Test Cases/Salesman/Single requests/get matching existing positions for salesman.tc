@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>update salesman</name>
+   <name>get matching existing positions for salesman</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>dc72c008-753c-42ad-8ce5-f5a4ffff6955</testCaseGuid>
+   <testCaseGuid>f2ec567e-58ab-4d00-9363-f07abc2a38ff</testCaseGuid>
 </TestCaseEntity>
