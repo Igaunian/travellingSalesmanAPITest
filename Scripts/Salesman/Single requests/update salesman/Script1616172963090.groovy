@@ -22,27 +22,27 @@ import com.kms.katalon.core.testobject.RequestObject
 
 def updateBody = """{
     "id": "${GlobalVariable.salesman_id}",
-    "username": "Imojean",
+    "username": "smctear2",
+    "email": "smctear2@sitemeter.com",
     "password": "password",
-    "email": "Dorene.Shaddock@gmail.com",
+    "lastname": "McTear",
+    "middleName": "Cristal",
     "firstname": "Updated",
-    "lastname": "Shaddock",
-    "middleName": "Sadowski",
+    "phoneNumber": 276599855,
+    "nationality": "Austria",
+    "country": "Russia",
+    "county": "Schäffern",
+    "city": "Kil’mez’",
+    "postcode": 36984,
+    "address": "Crownhardt",
+    "houseNumber": "1",
+    "birthDate": "1971-10-25",
     "gender": "male",
-    "nationality": "Canadian",
-    "country": "Nauru",
-    "county": "Toronto",
-    "city": "Saskatoon",
-    "address": "Paul Johnson street",
-    "postcode": 71643,
-    "houseNumber": 21,
-    "phoneNumber": 301234567,
-    "birthDate": "1987-06-18",
-    "drivingLicense": false,
+    "drivingLicence": true,
     "roles": [
-        "ROLE_USER"
+        "ROLE_SALESMAN"
     ],
-    "matchLevel": null
+    "matchLevel": "PERFECT"
 }"""
 
 def updateSalesman = (RequestObject)findTestObject('TS/put', [('base_url') : GlobalVariable.base_url, ('endpoint') : 'salesman/update-profile', ('token') : GlobalVariable.salesman_token]);

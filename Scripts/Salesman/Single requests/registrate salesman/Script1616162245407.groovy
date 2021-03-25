@@ -21,23 +21,24 @@ import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper
 
 String registrationBody = '''{
-    "registrationType": "salesmanRegistration",
-    "username": "Imojean",
-    "firstname": "Dorene",
-    "lastname": "Shaddock",
-    "middleName": "Sadowski",
-    "gender": "male",
-    "phoneNumber": "301234567",
-    "email": "Dorene.Shaddock@gmail.com",
-    "birthDate": "1987-06-18",
-    "nationality": "Canadian",
-    "country": "Nauru",
-    "county": "Toronto",
-    "city": "Saskatoon",
-    "postcode": "71643",
-    "address": "Paul Johnson street",
-    "houseNumber": "21",
-    "password": "password"
+        "registrationType": "salesmanRegistration",
+        "username": "smctear2",
+        "email": "smctear2@sitemeter.com",
+        "password": "password",
+        "lastname": "McTear",
+        "middleName": "Cristal",
+        "firstname": "Sasha",
+        "phoneNumber": 276599855,
+        "nationality": "Austria",
+        "country": "Russia",
+        "county": "Schäffern",
+        "city": "Kil’mez’",
+        "postcode": 36984,
+        "address": "Crownhardt",
+        "houseNumber": "1",
+        "birthDate": "1971-10-25",
+        "gender": "male",
+        "drivingLicence": true
 }''';
 
 def registrate = (RequestObject)findTestObject('TS/post no auth', [('base_url') : GlobalVariable.base_url, ('endpoint') : 'registration/']);

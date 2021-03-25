@@ -21,7 +21,7 @@ import com.kms.katalon.core.testobject.impl.HttpTextBodyContent
 import com.kms.katalon.core.testobject.RequestObject
 
 String loginBody = """{
-	"username" : "Imojean",
+	"username" : "smctear2",
 	"password" : "password"
 }""";
 
@@ -47,7 +47,7 @@ GlobalVariable.salesman_id = id
 
 WS.verifyResponseStatusCode(response, 200)
 
-assert 'Imojean' == result.username
+assert 'smctear2' == result.username
 
 
 

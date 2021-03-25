@@ -73,7 +73,7 @@ def result = jsonSlurper.parseText(response.getResponseBodyContent())
 WS.verifyResponseStatusCode(response, 200)
 
 assert result.studyIndex == 6
-assert result.salesman.username == 'Imojean'
+assert result.salesman.username == 'smctear2'
 
 
 

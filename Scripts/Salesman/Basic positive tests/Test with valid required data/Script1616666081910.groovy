@@ -16,19 +16,4 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import groovy.json.JsonSlurper
-import com.kms.katalon.core.testobject.RequestObject
-
-def getSalesman = (RequestObject)findTestObject('TS/get', [('base_url') : GlobalVariable.base_url, ('endpoint') : 'salesman/get-salesman/', ('id') : GlobalVariable.salesman_id, ('token') : GlobalVariable.salesman_token]);
-
-def response = WS.sendRequest(getSalesman)
-
-println(response)
-def jsonSlurper = new JsonSlurper()
-def result = jsonSlurper.parseText(response.getResponseBodyContent())
-println(result)
-
-WS.verifyResponseStatusCode(response, 200)
-
-assert 'smctear2' == result.username
 

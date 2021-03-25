@@ -22,27 +22,27 @@ import com.kms.katalon.core.testobject.RequestObject
 
 def deleteBody = """{
     "id": "${GlobalVariable.salesman_id}",
-    "username": "Imojean",
+    "username": "smctear2",
     "password": "password",
-    "email": "Dorene.Shaddock@gmail.com",
-    "firstname": "Dorene",
-    "lastname": "Shaddock",
-    "middleName": "Sadowski",
+    "email": "smctear2@sitemeter.com",
+    "firstname": "Sasha",
+    "lastname": "McTear",
+    "middleName": "Cristal",
     "gender": "male",
-    "nationality": "Canadian",
-    "country": "Nauru",
-    "county": "Toronto",
-    "city": "Saskatoon",
-    "address": "Paul Johnson street",
-    "postcode": 71643,
-    "houseNumber": 21,
-    "phoneNumber": 301234567,
-    "birthDate": "1987-06-18",
-    "drivingLicense": false,
+    "nationality": "Austria",
+    "country": "Russia",
+    "county": "Schäffern",
+    "city": "Kil’mez’",
+    "address": "Crownhardt",
+    "postcode": 36984,
+    "houseNumber": 1,
+    "phoneNumber": 276599855,
+    "birthDate": "1971-10-25",
+    "drivingLicense": true,
     "roles": [
-        "ROLE_USER"
+        "ROLE_SALESMAN"
     ],
-    "matchLevel": null
+    "matchLevel": "PERFECT"
 }"""
 
 def deleteSalesman = (RequestObject)findTestObject('TS/delete', [('base_url') : GlobalVariable.base_url, ('endpoint') : 'salesman/delete-profile', ('token') : GlobalVariable.salesman_token]);
