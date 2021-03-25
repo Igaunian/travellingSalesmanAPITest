@@ -38,7 +38,7 @@
    <testCaseLink>
       <guid>5842c4ad-b51d-48c3-b379-7e25093cde43</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Company/Single requests/delete company</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

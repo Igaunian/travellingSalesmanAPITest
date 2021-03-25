@@ -14,7 +14,7 @@
    <testCaseLink>
       <guid>6f2b6159-4790-4477-b695-115637c4a87b</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Salesman/Single requests/registrate salesman</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -26,7 +26,7 @@
    <testCaseLink>
       <guid>ecaa6bfe-ea54-4941-bb20-d1f34344487f</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Company/Single requests/registrate company</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -44,13 +44,13 @@
    <testCaseLink>
       <guid>52031792-8812-44a4-8412-b1d0aa28de08</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Salesman/Single requests/add personality to salesman</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>2a1d9733-9b69-489b-98b5-31be513bef11</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Salesman/Single requests/match salesman to role</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -62,13 +62,13 @@
    <testCaseLink>
       <guid>c6f8ddda-0730-48b6-acad-c5cdee74dbcf</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Position/Single requests/search positions</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>1a2a8eee-0758-4a01-9ef0-515f3b685518</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Position/Single requests/get position</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -80,7 +80,19 @@
    <testCaseLink>
       <guid>5677f1f4-5d30-48cd-ad79-8643e16cb1c0</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Position/Single requests/delete position</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>03214b8b-31f4-4984-b7c8-cacf0d0c954e</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Company/Single requests/delete company</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7613c9d4-a15a-42ff-adfc-f0cb7762abe5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Salesman/Single requests/delete salesman</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
